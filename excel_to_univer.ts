@@ -56,17 +56,10 @@ async excelJsReadFile(file) {
         cellData[rowIndex][colIndex] = {};
         const workCellFormula = cell.formula;
         if (workCellFormula) {
-          // 处理丝丽雅特殊公式
-          if (workCellFormula.toLocaleUpperCase().startsWith('=LOOKUP(1,0/(TEXT(LEFT(')) {
-            cellData[rowIndex][colIndex].f = this.replaceLEFTFormula(workCellFormula);
-          } else if (workCellFormula.toLocaleUpperCase().startsWith('=DATEDIF(') && workCellFormula.toLocaleUpperCase().includes('LEFT')) {
-            const replaceFomula = this.replaceLEFTFormula(workCellFormula);
-            cellData[rowIndex][colIndex].f = this.replaceDATEDIFFormula(replaceFomula);
-          } else {
-            // 其他公式不做处理
-            cellData[rowIndex][colIndex].f = workCellFormula;
-          }
+          // 公式
+          cellData[rowIndex][colIndex].f = workCellFormula;
         } else {
+          // 文本
           cellData[rowIndex][colIndex] = { v: cell.value };
         }
         // 单元格样式
