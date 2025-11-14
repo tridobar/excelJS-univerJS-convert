@@ -1,2 +1,2 @@
 # excelJS-univerJS-convert
-将excelJS读取的文件转换为univer sheet的IWorkbookData类型
+将excelJS读取的文件转换为univer sheet的IWorkbookData类型, 支持部分样式
