@@ -1,7 +1,7 @@
 // const fWorkbook = this.univerAPI.getActiveWorkbook();
 // const univerJson = fWorkbook.getSnapshot();  // fWorkbook.save() 获取的json没有style
 // const workbook = new ExcelJS.Workbook();
-reverseJsonToWorkbook(workbook: ExcelJS.Workbook, univerJson) {
+function reverseJsonToWorkbook(workbook: ExcelJS.Workbook, univerJson) {
   function rgbToArgb(rgb) {
     if (!rgb) return null;
     return rgb.replace('#', 'FF');
