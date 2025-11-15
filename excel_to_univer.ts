@@ -1,4 +1,4 @@
-async excelJsReadFile(file) {
+async function excelJsReadFile(file) {
   function argbToRgb(argb) {
     if (!argb) return null;
     if (argb.length === 8) return { rgb: '#' + argb.substring(2, 8) };
