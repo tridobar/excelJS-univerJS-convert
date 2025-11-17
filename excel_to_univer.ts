@@ -86,7 +86,7 @@ async function excelJsReadFile(file) {
             tr:	cs.alignment?.textRotation === 'vertical' ? { v: 1, a: 0 } : { v: 0, a: cs.alignment?.textRotation || 0 }, //文字旋转
             ht:	cs.alignment?.horizontal === 'center' ? 2 : cs.alignment?.horizontal === 'right' ? 3 : 1, //水平对齐方式
             vt:	cs.alignment?.vertical === 'top' ? 1 : cs.alignment?.vertical === 'bottom' ? 3 : 2, //垂直对齐方式
-            tb:	cs.alignment?.wrapText ? 1 : 0, //截断溢出
+            tb:	cs.alignment?.wrapText ? 3 : 1, //截断溢出
             pd: null,	//内边距
             n: null,	//数字格式
           };
