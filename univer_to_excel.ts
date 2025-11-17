@@ -120,6 +120,8 @@ function reverseJsonToWorkbook(workbook: ExcelJS.Workbook, univerJson) {
       }
     }
 
+    // 工作表隐藏
+    newSheet.state = sheetInfo.hidden === 1 ? 'hidden' : 'visible';
     // 合并单元格
     sheetInfo.mergeData?.forEach(merge => {
       newSheet.mergeCells(merge.startRow + 1, merge.startColumn + 1, merge.endRow + 1, merge.endColumn + 1);
