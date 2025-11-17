@@ -95,7 +95,7 @@ function reverseJsonToWorkbook(workbook: ExcelJS.Workbook, univerJson) {
               alignment: {
                 horizontal: style.ht === 2 ? 'center' : style.ht === 3 ? 'right' : 'left',
                 vertical: style.vt === 1 ? 'top' : style.vt === 3 ? 'bottom' : 'middle',
-                wrapText: style.tb === 1,
+                wrapText: style.tb === 3,
                 indent: 0,
                 shrinkToFit: false,
                 textRotation: style.tr?.v === 1 ? 'vertical' : (style.tr?.a || 0),
