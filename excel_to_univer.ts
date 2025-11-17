@@ -61,7 +61,9 @@ async function excelJsReadFile(file) {
         const workCellFormula = cell.formula;
         if (workCellFormula) {
           // 公式
+          if (!workCellFormula.startsWith('=')) workCellFormula = '=' + workCellFormula;
           cellData[rowIndex][colIndex].f = workCellFormula;
+          cellData[rowIndex][colIndex].v = cell.result;
         } else {
           // 文本
           cellData[rowIndex][colIndex] = { v: cell.value };
@@ -107,6 +109,7 @@ async function excelJsReadFile(file) {
       cellData: cellData,
       showGridlines: 1,
       mergeData: [],
+      hidden: worksheet.state === 'hidden' ? 1 : 0,
       columnData: worksheet.columns.map(column => ({ w: column.width ? Math.round(column.width * 8) : null, hd: column.hidden ? 1 : 0 })),
       rowData,
     };
