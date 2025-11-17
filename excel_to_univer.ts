@@ -1,3 +1,7 @@
+// 使用：
+// this.excelJsReadFile(file).then((snapshot) => {
+//   this.univerAPI.createWorkbook(snapshot);
+// });
 async function excelJsReadFile(file) {
   function argbToRgb(argb) {
     if (!argb) return null;
